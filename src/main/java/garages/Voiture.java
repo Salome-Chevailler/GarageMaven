@@ -93,9 +93,15 @@ public class Voiture {
      * @param out l'endroit où imprimer (ex: System.out)
      */
     public void imprimeStationnements(PrintStream out) {
-        for (Stationnement s : myStationnements ){
-            System.out.println("Garage : " + s.getGarage() + " Date d'entrée : " + s.getEntree() + " Date de sortie : " + s.getFin());
-        }
+        garagesVisites().forEach(g->{
+            System.out.println(g.toString()+ " \n");
+                myStationnements.forEach(s -> {
+                    if (g.equals (s.getGarage())){
+                        System.out.println("    "+s.toString()+"\n");
+                    }
+                });
+        });
+       
     }
 
 }
