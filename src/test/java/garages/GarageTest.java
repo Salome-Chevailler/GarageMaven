@@ -55,7 +55,7 @@ public class GarageTest {
 		try {
 			v1.sortDuGarage(); // Que doit-il se passer ?
 			// Si on arrive ici, il n'y a pas eu d'exception, échec
-			fail();
+			fail("La voiture n'est pas dans un garage");
 		} catch (Exception e) {
 			// Si on arrive ici, il y a eu une exception, c'est ce qui est attendu
 		}
@@ -67,7 +67,7 @@ public class GarageTest {
 		try {
 			v1.entreAuGarage(g2); // Que doit-il se passer ?
 			// Si on arrive ici, il n'y a pas eu d'exception, échec
-			fail();
+			fail("La voiture est déjà dans un garage");
 		} catch (Exception e) {
 			// Si on arrive ici, il y a eu une exception, c'est ce qui est attendu
 		}
@@ -84,6 +84,7 @@ public class GarageTest {
 	 * résultat attendu.
 	 * @throws Exception 
 	 */
+        
 	@Test
 	public void testCorrectPrintFormat() throws Exception {
 		v1.entreAuGarage(g1);
@@ -122,6 +123,7 @@ public class GarageTest {
 	 * @param substring Sub-string to look for.
 	 * @return Count of substrings in string.
 	 */
+        
 	private int countSubstring(final String string, final String substring) {
 		int count = 0;
 		int idx = 0;
